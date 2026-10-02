@@ -1,0 +1,461 @@
+/*-- scss:defaults --*/
+
+/*
+This theme is an adaptation of the clean reveal-js theme, made by Grant McDermott.
+
+https://github.com/grantmcdermott/quarto-revealjs-clean
+*/
+
+
+// Custom colours and variables
+
+$theme-kulblue: #428cac;
+$theme-white: #F1F5F8;
+$theme-kulnavy: #1c3d71;
+$theme-black: #131516;
+$theme-accent: #9a2515;
+$theme-example: #C490D1;
+
+$right-arrow: "\2192"; // Unicode character for right arrow
+
+$code-block-bg: white;
+$code-block-border-color: $theme-black;
+
+// fonts
+
+/*
+Note: This theme uses the Noto Sans family, which it imports from Google
+  Fonts to ensure consistent weighting in addition to availability. While
+  you can use a local installation of Noto Sans, this is generally not 
+  recommended since the weighting will likely be wrong (probably too
+  light). OTOH, importing from Google Fonts can cause some issues in
+  certain secure environments due the external CDN (see:
+  https://github.com/grantmcdermott/quarto-revealjs-clean/issues/7). If
+  that's the case for you, simply comment out the `@import url(...)` line
+  below and it will default for the default Sans Serif font on your system
+  (e.g., Helvetica on a Mac). Circling back to the earlier point about
+  preserving consistent font weights, you may also wish to remove "Roboto"
+  from the choice set if the family is installed locally.
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+//@import url('https://fonts.googleapis.com/css2?family=Voces&display=swap');
+
+
+
+//$font-family-sans-serif: "Noto Sans", sans-serif !default;
+//$presentation-heading-font: "Noto Sans", sans-serif !default;
+
+$font-family-sans-serif: 'Manrope', sans-serif;
+$presentation-heading-font: 'IBM Plex Serif', serif;
+
+//$font-family-sans-serif: 'Voces', sans-serif;
+
+
+
+$presentation-heading-color: $theme-kulnavy !default;
+//$presentation-heading-font-weight: lighter;
+//$presentation-heading-line-height: 2;
+//$presentation-block-margin: 28px;
+$presentation-font-size-root: 32px;
+
+// colors
+//$body-bg: #f0f1eb !default;
+$body-color: $theme-black !default;
+$body-bg: $theme-white !default;
+$link-color: $theme-kulnavy !default;
+$code-color: $theme-black !default;
+$selection-bg: $theme-accent !default;
+
+
+/*-- scss:rules --*/
+
+.reveal a {
+  line-height: 1.5em;
+  text-decoration: underline;
+}
+
+.reveal p {
+  // font-weight: 300;
+  font-weight: lighter;
+  margin-top: 1.25em;
+}
+
+// title and headings
+
+#title-slide {
+  text-align: left;
+
+  .title {
+    color: $body-color;
+    font-size: 1.4em;
+    // font-weight: 350;
+    //font-weight: lighter;
+  }
+
+  .subtitle {
+    color: $theme-kulblue;
+    // font-style: italic;
+    margin-top: 0em;
+    font-size: 1.4em;
+    //font-weight: lighter;
+  }
+
+
+  
+  .quarto-title-affiliation,
+  .quarto-title-author-email {
+    font-style: italic;
+    text-align: right;
+    // font-size: 80%;
+    // color: #7F7F7F;
+  }
+
+  .author,
+  .quarto-title-author-name {
+    color: $body-color;
+    text-align: right;
+  }
+
+  .quarto-title-authors {
+    display: flex;
+    justify-content: left;
+
+    .quarto-title-author {
+      padding-left: 0em;
+      padding-right: 0em;
+      width: 100%;
+    }
+  }
+  
+  .date {
+    text-align: right;
+    font-size: 80%;
+  }
+
+}
+
+.reveal h1 {
+  color: $theme-kulblue;
+}
+
+.reveal h2 {
+  // font-weight: 350;
+  //font-weight: lighter;
+  font-size: 1.4em;
+  color: $theme-kulnavy;
+}
+
+.reveal h3 {
+  color: $theme-kulblue;
+  font-style: italic;
+  // font-weight: 350;
+  //font-weight: lighter;
+  font-size: 0.95em;
+}
+
+.reveal h4 {
+  color: $theme-accent;
+  // font-weight: 350;
+  font-weight: normal;
+  margin-top: 1.25em;
+}
+
+// alerts etc.
+
+.alert {
+  color: $theme-accent;
+  font-weight: bold;
+}
+
+.alert2 {
+  color: $theme-kulblue;
+  font-weight: bold;
+}
+
+.ex {
+  color: $theme-example;
+  //font-weight: bold;
+}
+
+.fg {
+  color: var(--col, $theme-black);
+}
+
+.bg {
+  background-color: var(--col, #fff);
+  padding: 0.1em;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+// code blocks
+
+.reveal pre code {
+  background-color: #FFFFFF;
+}
+
+.reveal div.sourceCode {
+  border: none;
+  border-radius: 0px;
+  margin-bottom: 10px !important;
+}
+
+.smallcaps {
+  font-variant: small-caps;
+}
+
+// logo
+
+.reveal .slide-logo {
+  height: 50px !important;
+  width: 150px !important;
+  max-width: unset !important;
+  max-height: unset !important;
+}
+
+
+// placing
+
+// .textleft {
+//  text-align: left;
+// }
+
+// .textright {
+//   text-align: right;
+// }
+
+// .textcenter {
+//   text-align: center;
+// }
+
+
+// font size
+
+.font70 {
+   font-size: 70%;
+  //font-weight: lighter;
+}
+
+.font80 {
+   font-size: 80%;
+  //font-weight: lighter;
+}
+
+.font90 {
+   font-size: 90%;
+  //font-weight: lighter;
+}
+
+
+// lists
+
+// Unordered lists
+
+.reveal ul {
+  // font-weight: 300;
+  // font-weight: lighter;
+  font-size: 80%;
+  padding-left: 16px;
+
+  li::marker {
+    color: mix($theme-kulblue, white, 70%);
+  }
+}
+
+.reveal ul ul {
+  list-style: none;
+
+  li:before {
+    content: $right-arrow;
+    color: mix($theme-kulblue, white, 60%);
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    margin-right: 0.5em;
+  }
+}
+
+// Ordered lists
+
+.reveal ol {
+  // font-weight: 300;
+  font-weight: lighter;
+  padding-left: 16px;
+
+  li::marker {
+    color: $theme-accent;
+  }
+}
+
+
+
+
+
+// Beamer-style button link environment
+
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: $theme-accent;
+  border: 1px solid $theme-accent;
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.button::before {
+  content: "▶";
+  margin-right: 5px;
+}
+
+// tables
+
+
+.reveal table {
+  // height: auto; /* Adjust table width to fit content up to the available slide space */
+  table-layout: auto;
+  width: auto;
+  max-width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 0.8em;
+}
+
+.reveal table th,
+.reveal table td {
+  border: none; /* Remove internal row lines */
+  padding: .23em; /* Adjust padding as needed */
+  text-align: left; /* Adjust text alignment as needed */
+  font-weight: lighter; /* Lighter font weight for main table text */
+  white-space: normal;
+}
+
+/* Adds a bottom border to the table header row for distinction */
+.reveal table thead th,
+.reveal .slides table tr:last-child td,
+.reveal .slides table {
+  border-bottom: 2px solid #D3D3D3; /* Dark grey color for the bottom border */
+}
+
+/* Make column headers bold */
+.reveal table thead th {
+  font-weight: bold;
+}
+
+/* Caption of figure*/
+.caption{
+   text-align: center;
+}
+
+
+/* Styling table captions */
+.reveal table caption {
+  color: #666666; /* Dark grey color for the caption */
+  font-variant: small-caps; /* Use small caps for the caption text */
+}
+
+// Special catch for etable environment to ensure these table images
+// don't overflow the slide.
+// See: https://lrberge.github.io/fixest/articles/etable_new_features.html
+
+.etable {
+  width: 100%;
+  height: calc(100% - 3em); /* Adjust 3em based on the height of your header, if necessary */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.etable img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.reveal .gt_table {
+  margin-left: auto;
+  margin-right: auto; /* center */
+  max-width: 90%;     /* match R's pct(80) if you want */
+}
+
+/* Apply Sedgwick Ave to all Graphviz SVG text */
+svg text {
+  font-family: 'Sedgewick Ave' !important;
+}
+
+blockquote {
+  position: relative;
+  font-style: italic;
+  padding-left: 2.5rem; // room for the quote mark
+  font-size: smaller;
+  justify-content: space-between;
+  border-left: 0.25rem solid #1c3d71; // <-- pick your color
+
+  &::before {
+    content: "“"; // left double quotation mark
+    position: absolute;
+    left: 0;
+    top: -0.2em;
+    font-size: 6rem;  // make it big
+    color: #1c3d71; // light decorative color
+    line-height: 1;
+    pointer-events: none;
+  }
+}
+
+
+/* Scope styles to only those dl inside .desc blocks */
+.desc dl {
+  display: grid;
+  /* Pick ONE of the next two lines, depending on what you want: */
+
+  /* A) Auto width based on the longest term (dynamic “tab”): */
+  grid-template-columns: max-content 1fr;
+
+  /* B) Fixed tab stop (e.g., 14ch is roughly 14 characters wide): */
+  /* grid-template-columns: 14ch 1fr; */
+
+  column-gap: 1rem;   /* space between term and definition */
+  row-gap: .25rem;    /* vertical spacing between rows */
+  margin: 0;
+}
+
+.desc dt {
+  grid-column: 1;
+  font-weight: 700;
+  margin: 0;
+  /* Optional: keep terms on one line */
+  /* white-space: nowrap; */
+}
+
+.desc dd {
+  grid-column: 2;
+  margin: 0;          /* remove default indent */
+}
+
+
