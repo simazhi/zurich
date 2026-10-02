@@ -2,3 +2,26 @@
 .Rhistory
 .RData
 .Ruserdata
+=======
+# Quarto build cache and freeze outputs
+_quarto/
+_freeze/
+
+# R-related (if you’re using Quarto with R)
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Python-related (if you’re using Quarto with Python)
+__pycache__/
+.ipynb_checkpoints/
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Node (if you ever use reveal.js extensions with npm)
+node_modules/
