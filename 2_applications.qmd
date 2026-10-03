@@ -1,7 +1,11 @@
 ---
-title: "Liu Chunxiao"
+title: "Applications"
 format: html
 ---
+
+# Main idea
+
+Some thoughts and process to address your (14! pages of) great questions.
 
 # Setup
 
@@ -9,13 +13,20 @@ format: html
 ```{r}
 library(tidyverse)
 library(here)
-here::i_am("chunxiao.qmd")
+here::i_am("2_applications.qmd")
 library(tidytext)
 library(readxl)
 library(janitor)
 ```
+```{r}
+# devtools::install_github("simazhi/baxteRsagaRt/baxteRsagaRt")
+library(baxteRsagaRt)
+```
 
-# The problem
+
+
+
+# Liu Chunxiao
 
 ## Exerpt
 
@@ -295,7 +306,7 @@ And extending that for
 If you can formulate your question in terms of a regular expression, you can start looking for it with similar methods as above, but then taking into account the initial (not split off in our data yet) and roundness patterns.
 
 
-# Problem 2:
+## Problem 2:
 
 > In close reading process, I often encounter meaningful sound and sound-meaning patterns. How to test such patterns in a larger corpus?
 
