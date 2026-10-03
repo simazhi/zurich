@@ -1883,6 +1883,19 @@ So [breaking down in steps]{.alert2}, [finding logical order]{.alert2}, [trial a
 The upshot is that R code is [incredibly robust]{.alert2}.  
 It is well-maintained, and many of my scripts from 10 years ago (time flies) still run.
 
+## Vibecoding
+
+If you want to *vibecode* with LLM's like ChatGPT (something these tools are relatively good at), it's good to tell in your initial prompt that you want
+
+`an R solution (tidyverse style)`
+
+That will be most similar to the type of R language I have shown today.
+
+There is also "Base R", and that becomes more important if you are more of a programmer and care about efficiency, but tidyverse is a bit more wordy / "humanlike" and thus easier to parse for beginners to intermediate to advanced users.
+
+A big difference between R and Python is that in R there are multiple roads that lead to Rome, while in Python there is preferably a single road but road should be so obvious other roads aren't even considered.
+
+
 # Any questions?
 
 Before we dive into the applications?
