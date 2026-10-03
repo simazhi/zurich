@@ -26,7 +26,7 @@ logo: inputfiles/kul.png
 # code-link: true
 # code-copy: true
 highlight-style: "github" # pygments, github
-footer: Go to [osf.io/598fk](https://osf.io/598fk) for materials
+footer: Go to [https://github.com/simazhi/zurich](https://github.com/simazhi/zurich) for materials
 ---
 
 # Some introductions
