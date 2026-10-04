@@ -613,6 +613,22 @@ Shortcuts:
 -   Windows: `CTRL + ALT + i`
 -   Mac: `⌘  + OPTION + i`
 
+## R chunks
+
+> 物有本末  
+> 事有終始  
+> 知所先後  
+> 則近道矣  
+
+. . .
+
+It is important that [chunks go in the correct order]{.alert2}.
+
+You can experiment but in the end it's always good to make use of the option to rerun everything
+
+`Session > Restart R and Run All Chunks`
+
+
 ## Loading packages
 
 ```{r}
