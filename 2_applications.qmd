@@ -18,6 +18,8 @@ library(tidytext)
 library(readxl)
 library(janitor)
 ```
+
+
 ```{r}
 # devtools::install_github("simazhi/baxteRsagaRt/baxteRsagaRt")
 library(baxteRsagaRt)
@@ -101,10 +103,24 @@ Let's go for
 - suffix
 
 
+	[t-qʰ](r)Ak
+	
+	> [t-qh]Ak
+	
+```{r}
+wrangled %>%
+  mutate(reconstruction = str_remove(reconstruction, "\\*")) %>% 
+  
+  mutate(recon_no_r = str_remove(reconstruction, "\\(.+\\)"),
+         recon_ro_r = str_remove_all(recon_no_r, "[\\[\\]]")) 
+```
+	
+
 ```{r}
 wrangled2 <-
   wrangled %>% 
   mutate(reconstruction = str_remove(reconstruction, "\\*")) %>% 
+
   mutate(recon_nobrack = str_remove_all(reconstruction, "[\\[\\]\\(\\)]")) %>% 
   mutate(presyl = str_extract(recon_nobrack, "^[^-]+(?=-)"),
          suffix = str_extract(recon_nobrack, "(?<=-)s$")) %>%  # if there are more than s, you can put [srtvx]
@@ -241,7 +257,7 @@ We first need to annotate that for that, and then repeat the adjacency pair code
 adjacent_pairs2 <-
   wrangled3 %>% 
   mutate(roundness = case_when(
-    vowel %in% c("i", "I", "e", "E") ~ "unround",
+    vowel %in% c("i", "I", "e", "E", "a", "A") ~ "unround",
     vowel %in% c("o", "O", "u", "U") ~ "round",
     .default = "other"
   )) %>% 
@@ -304,6 +320,8 @@ And extending that for
 > Lizhu 離朱 (*[r]aj+to)
 
 If you can formulate your question in terms of a regular expression, you can start looking for it with similar methods as above, but then taking into account the initial (not split off in our data yet) and roundness patterns.
+
+raj ro 
 
 
 ## Problem 2:

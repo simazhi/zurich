@@ -701,7 +701,7 @@ Use the [here]{.alert2} package
 ```{r}
 #| eval: false
 #| echo: true
-here::i_am("zurich.qmd")) # or however you called your file
+here::i_am("zurich.qmd") # or however you called your file
 
 # test with
 here::here()
@@ -1818,19 +1818,19 @@ There is another case study on Star Trek species that repeats most of what we've
 
 ## Starting points after this crash course
 
-Programming languages require some time investment to become [literate enough]{.alert2}, but it doesn't have to suck.
+Programming languages require some time investment to become [literate enough]{.alert2}. Here is my number one go-to teaching guide.
 
 ::: columns
-::: {.column width="50%"}
 
-My number one go-to teaching guide: *R for Data Science*  
-[https://r4ds.hadley.nz/](https://r4ds.hadley.nz/)
+::: {.column width="30%"}
+
+[*R for Data Science*](https://r4ds.hadley.nz/)
 
 ![](inputfiles/r4ds.jpg)
 
 :::
 
-::: {.column width="50%"}{.fragment}
+::: {.column width="70%" .fragment}
 
 Chapters are short, and involve lots of copy-pasting.
 
@@ -1848,14 +1848,15 @@ For this audience, the following chapters might be most useful (but all of them 
 ## Starting points after this crash course
 
 After *R for Data Science*, I'd go with *TidyText*
+
 ::: columns
-::: {.column width="50%"}
+::: {.column width="40%"}
 
 ![](inputfiles/tidytext_cover.png)
 
 :::
 
-::: {.column width="50%"}{.fragment}
+::: {.column width="60%" .fragment}
 
 Chapters are short, and involve lots of copy-pasting.
 
@@ -1865,6 +1866,7 @@ For this audience, the following chapters might be most useful (but all of them 
 * case studies you're interested in
 
 :::
+
 :::
 
 
@@ -1884,9 +1886,26 @@ For this audience, the following chapters might be most useful (but all of them 
 
 ## Linguistics with R
 
+::: columns
+::: {.column width="50%"}
+
 *How to do linguistics with R* ([Levshina]{.alert2}, 2015)
 
+:::
+
+::: {.column width="50%"}
+
+
 ![](inputfiles/levshina.jpg)
+
+:::
+:::
+
+
+
+
+
+
 
 This is a handy reference and something I still use from time to time.
 
